@@ -2,6 +2,7 @@ import { ExternalLink, Video, Github, Mail } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { t, projectTranslations } from '../i18n';
 import mobileAppImage from '../images/mobile-app-project.png';
+import musicLearnImage from '../images/music-learn-project.png';
 import ecommerceProjectImage from '../images/ecommerce-project.png';
 
 interface Project {
@@ -33,10 +34,12 @@ const baseProjects = [
     imageAlt: 'Vista previa del proyecto Mobile App',
   },
   {
-    tech: ['Vue', 'D3.js', 'Tailwind'],
-    demo: 'https://demo.example.com',
-    video: 'https://youtube.com',
-    github: 'https://github.com',
+    tech: ['Next.js', 'Tailwind', 'Vercel AI SDK'],
+    demo: 'https://music-learn-with-ai.vercel.app/',
+    video: '#',
+    github: 'https://github.com/mathyled/music_learn-with-AI',
+    image: musicLearnImage,
+    imageAlt: 'Vista previa del proyecto MusicLearn with AI',
   },
 ];
 

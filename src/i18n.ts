@@ -45,13 +45,13 @@ export const projectTranslations = {
       title: 'E-Commerce Platform',
       description: 'Plataforma de comercio electrónico completa con carrito de compras, autenticación y panel de administración.',
     },
-    // {
-    //   title: 'Dashboard Analytics',
-    //   description: 'Dashboard interactivo con visualización de datos en tiempo real y reportes exportables.',
-    // },
     {
       title: 'Mobile App',
       description: 'Aplicación para adoptar mascotas',
+    },
+    {
+      title: 'MusicLearn with AI',
+      description: 'Aprende inglés a través de canciones. Analiza letras con IA, genera quizzes interactivos y mejora tu vocabulario mientras disfrutas de tu música favorita.',
     },
   ],
   en: [
@@ -59,13 +59,13 @@ export const projectTranslations = {
       title: 'E-Commerce Platform',
       description: 'Complete e-commerce platform with shopping cart, integrated payments, and admin panel.',
     },
-    // {
-    //   title: 'Dashboard Analytics',
-    //   description: 'Interactive dashboard with real-time data visualization and exportable reports.',
-    // },
     {
       title: 'Mobile App',
       description: 'Application to adopt pets',
+    },
+    {
+        title: 'MusicLearn with AI',
+        description: 'Learn English through songs. Analyze lyrics with AI, generate interactive quizzes, and enhance your vocabulary while enjoying your favorite music.',
     },
   ],
 };

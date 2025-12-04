@@ -46,6 +46,7 @@ function Hero() {
           <span className="px-4 py-2 bg-gray-100 rounded-full">Tailwind CSS</span>
           <span className="px-4 py-2 bg-gray-100 rounded-full">Next.js</span>
           <span className="px-4 py-2 bg-gray-100 rounded-full">Firebase</span>
+          <span className="px-4 py-2 bg-gray-100 rounded-full">Vercel AI SDK</span>
         </div>
       </div>
     </section>
