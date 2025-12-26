@@ -4,6 +4,7 @@ import { t, projectTranslations } from '../i18n';
 import mobileAppImage from '../images/mobile-app-project.png';
 import musicLearnImage from '../images/music-learn-project.png';
 import ecommerceProjectImage from '../images/ecommerce-project.png';
+import runningTeamImage from '../images/cep.png';
 
 interface Project {
   title: string;
@@ -17,6 +18,7 @@ interface Project {
 }
 
 const baseProjects = [
+
   {
     tech: ['React', 'Bootstrap', 'CSS Modules'],
     demo: 'https://my-ecommerce-ten-iota.vercel.app/',
@@ -36,10 +38,18 @@ const baseProjects = [
   {
     tech: ['Next.js', 'Tailwind', 'Vercel AI SDK'],
     demo: 'https://music-learn-with-ai.vercel.app/',
-    video: '#',
+    video: 'https://www.linkedin.com/posts/mathias-ledesma_fullstack-developer-nextjs-activity-7409306235080138752-8J-H?utm_source=share&utm_medium=member_desktop&rcm=ACoAAC7JELsBs79_d-0kzS-v6gjOZPxmpnFKnlc',
     github: 'https://github.com/mathyled/music_learn-with-AI',
     image: musicLearnImage,
     imageAlt: 'Vista previa del proyecto MusicLearn with AI',
+  },
+     {
+    tech: ['Next.js', 'Tailwind', 'Shadcn UI', 'React Framer Motion'],
+    demo: 'https://cep-running-team.vercel.app/',
+    video: '#',
+    github: 'https://github.com/mathyled/running-team',
+    image: runningTeamImage,
+    imageAlt: 'Vista previa del proyecto CEP Running Team',
   },
 ];
 

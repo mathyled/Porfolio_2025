@@ -53,6 +53,10 @@ export const projectTranslations = {
       title: 'MusicLearn with AI',
       description: 'Aprende inglés a través de canciones. Analiza letras con IA, genera quizzes interactivos y mejora tu vocabulario mientras disfrutas de tu música favorita.',
     },
+    {
+      title: 'CEP Running Team',
+      description: 'Sitio web para el equipo de corredores de CEP entrenamiento, con información sobre entrenamientos, eventos y resultados.',
+    }
   ],
   en: [
     {
@@ -64,9 +68,13 @@ export const projectTranslations = {
       description: 'Application to adopt pets',
     },
     {
-        title: 'MusicLearn with AI',
-        description: 'Learn English through songs. Analyze lyrics with AI, generate interactive quizzes, and enhance your vocabulary while enjoying your favorite music.',
+      title: 'MusicLearn with AI',
+      description: 'Learn English through songs. Analyze lyrics with AI, generate interactive quizzes, and enhance your vocabulary while enjoying your favorite music.',
     },
+    {
+      title: 'CEP Running Team',
+      description: 'Website for the CEP running team, featuring training information, events, and results.',
+    }
   ],
 };
 
