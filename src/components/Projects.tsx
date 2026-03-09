@@ -13,7 +13,7 @@ interface Project {
   demo?: string;
   video?: string;
   github?: string;
-  image?: string;
+  image?: any;
   imageAlt?: string;
 }
 
