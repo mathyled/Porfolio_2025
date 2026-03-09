@@ -1,0 +1,277 @@
+{
+  "personal": {
+    "name": "Mathias Ledesma",
+    "age": 31,
+    "location": "Argentina",
+    "title": "Fullstack Developer",
+    "email": "mathiasimagine@gmail.com",
+    "phone": "",
+    "handle": "@mathyled",
+    "bio": "Fullstack Developer. Creando experiencias web excepcionales con código limpio y diseños modernos. Experienced in React, Next.js, and TypeScript.",
+    "avatar": "/avatar.png",
+    "fallbackAvatar": "/avatar.png"
+  },
+  "education": {
+    "current": {
+      "degree": "Fullstack Developer",
+      "institution": "Self-Taught / Various platforms",
+      "duration": "Present",
+      "cgpa": "",
+      "graduationDate": ""
+    },
+    "previous": null,
+    "achievements": []
+  },
+  "experience": [],
+  "skills": {
+    "programming": [
+      "JavaScript",
+      "TypeScript",
+      "HTML/CSS",
+      "Java",
+      "Python",
+      "C#"
+    ],
+    "ml_ai": [
+      "Vercel AI SDK"
+    ],
+    "web_development": [
+      "React",
+      "Next.js",
+      "Tailwind CSS",
+      "Firebase",
+      "CSS Modules",
+      "Bootstrap",
+      "Shadcn UI",
+      "Framer Motion",
+      "Nest.js",
+      "Express.js",
+      "Spring Boot",
+      ".Net Core"
+    ],
+    "databases": [
+      "Firebase",
+      "Supabase",
+      "PostgreSQL",
+      "MongoDB",
+      "MySQL",
+      "SQLite"
+    ],
+    "devops_cloud": [
+      "Vercel",
+      "Git",
+      "GitHub"
+    ],
+    "iot_hardware": [],
+    "soft_skills": [
+      "Problem Solving",
+      "Team Collaboration"
+    ]
+  },
+  "certifications": [],
+  "projects": [
+    {
+      "title": "CEP Running Team",
+      "category": "Web Development",
+      "description": "Plataforma deportiva para el equipo de corredores de CEP entrenamiento, con información sobre entrenamientos, eventos y resultados. Gestión de CRM, planificaciones, reservas de boxes.",
+      "techStack": [
+        "Next.js",
+        "Tailwind",
+        "Shadcn UI",
+        "React Framer Motion"
+      ],
+      "date": "2024",
+      "status": "Completed",
+      "featured": true,
+      "links": [
+        {
+          "name": "Live Site",
+          "url": "https://www.cepentrenamiento.com.ar/"
+        },
+        {
+          "name": "GitHub",
+          "url": "https://github.com/mathyled/running-team"
+        }
+      ],
+      "images": [
+        {
+          "src": "/cep.png",
+          "alt": "CEP Running Team"
+        }
+      ]
+    },
+    {
+      "title": "MusicLearn with AI",
+      "category": "AI/Web Development",
+      "description": "Aprende inglés a través de canciones. Analiza letras con IA, genera quizzes interactivos y mejora tu vocabulario mientras disfrutas de tu música favorita.",
+      "techStack": [
+        "Next.js",
+        "Tailwind css",
+        "Vercel AI SDK"
+      ],
+      "date": "2024",
+      "status": "Completed",
+      "featured": true,
+      "links": [
+        {
+          "name": "Live Site",
+          "url": "https://music-learn-with-ai.vercel.app/"
+        },
+        {
+          "name": "GitHub",
+          "url": "https://github.com/mathyled/music_learn-with-AI"
+        },
+        {
+          "name": "Video",
+          "url": "https://www.linkedin.com/posts/mathias-ledesma_fullstack-developer-nextjs-activity-7409306235080138752-8J-H?utm_source=share&utm_medium=member_desktop&rcm=ACoAAC7JELsBs79_d-0kzS-v6gjOZPxmpnFKnlc"
+        }
+      ],
+      "images": [
+        {
+          "src": "/music-learn-project.png",
+          "alt": "MusicLearn with AI"
+        }
+      ]
+    },
+    {
+      "title": "E-Commerce Platform",
+      "category": "Web Development",
+      "description": "Plataforma de comercio electrónico completa con carrito de compras, autenticación y panel de administración.",
+      "techStack": [
+        "React",
+        "Bootstrap",
+        "CSS Modules"
+      ],
+      "date": "2023",
+      "status": "Completed",
+      "featured": true,
+      "links": [
+        {
+          "name": "Live Site",
+          "url": "https://my-ecommerce-ten-iota.vercel.app/"
+        },
+        {
+          "name": "GitHub",
+          "url": "https://github.com/mathyled/my_ecommerce"
+        }
+      ],
+      "images": [
+        {
+          "src": "/ecommerce-project.png",
+          "alt": "E-Commerce"
+        }
+      ]
+    },
+    {
+      "title": "Mobile App",
+      "category": "Mobile Development",
+      "description": "Aplicación para adoptar mascotas",
+      "techStack": [
+        "Flutter",
+        "Firebase",
+        "TypeScript"
+      ],
+      "date": "2023",
+      "status": "Completed",
+      "featured": true,
+      "links": [
+        {
+          "name": "GitHub",
+          "url": "https://github.com/No-Country-simulation/equipo-c23-33-mobile"
+        }
+      ],
+      "images": [
+        {
+          "src": "/mobile-app-project.png",
+          "alt": "Mobile App"
+        }
+      ]
+    }
+  ],
+  "social": {
+    "linkedin": "https://www.linkedin.com/in/mathias-ledesma/",
+    "github": "https://github.com/mathyled",
+    "twitter": "",
+    "kaggle": "",
+    "leetcode": "",
+    "fiverr": "",
+    "portfolio": ""
+  },
+  "internship": {
+    "seeking": true,
+    "duration": "",
+    "startDate": "",
+    "preferredLocation": "Remote",
+    "focusAreas": [
+      "Frontend Development"
+    ],
+    "availability": "Available for immediate start",
+    "workStyle": "Fast learner, team player",
+    "goals": "Build amazing and responsive web experiences"
+  },
+  "personality": {
+    "traits": [
+      "passionate",
+      "determined",
+      "collaborative",
+      "results-driven"
+    ],
+    "interests": [
+      "Web Development",
+      "AI Frontends"
+    ],
+    "funFacts": [],
+    "workingStyle": "I move fast, learn faster, and love tackling challenging problems with scalable solutions",
+    "motivation": "Building technology that makes a real impact"
+  },
+  "resume": {
+    "title": "Mathias Ledesma - Resume",
+    "description": "Fullstack Developer",
+    "fileType": "PDF",
+    "lastUpdated": "2026",
+    "fileSize": "",
+    "downloadUrl": "https://drive.google.com/file/d/1mBGmEf90OB9O0caoOWqfTcfCjzscT00w/view?usp=sharing"
+  },
+  "chatbot": {
+    "name": "Mathias",
+    "personality": "casual, enthusiastic, tech-savvy",
+    "tone": "friendly and conversational",
+    "language": "spanish",
+    "responseStyle": "short and interactive",
+    "useEmojis": true,
+    "topics": [
+      "projects",
+      "skills",
+      "experience",
+      "contact"
+    ]
+  },
+  "presetQuestions": {
+    "me": [
+      "¿Quién eres?",
+      "Háblame de ti",
+      "¿Cuáles son tus pasiones?"
+    ],
+    "professional": [
+      "¿Cuáles son tus habilidades?",
+      "¿Qué experiencia tienes?"
+    ],
+    "projects": [
+      "¿De qué proyectos estás más orgulloso?",
+      "Háblame sobre MusicLearn with AI"
+    ],
+    "achievements": [],
+    "contact": [
+      "¿Cómo puedo contactarte?"
+    ],
+    "fun": [
+      "¿Cuáles son tus hobbies?"
+    ]
+  },
+  "meta": {
+    "configVersion": "2.0",
+    "lastUpdated": "2026-03-09",
+    "generatedBy": "Mathias Ledesma",
+    "description": "Portfolio Configuration"
+  }
+}
