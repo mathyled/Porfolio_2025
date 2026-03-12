@@ -1,24 +1,24 @@
-'use client';
-import { useChat } from '@ai-sdk/react';
-import { AnimatePresence, motion } from 'framer-motion';
-import dynamic from 'next/dynamic';
-import { useSearchParams } from 'next/navigation';
-import React, { useEffect, useMemo, useState } from 'react';
-import { toast } from 'sonner';
+"use client";
+import { useChat } from "@ai-sdk/react";
+import { AnimatePresence, motion } from "framer-motion";
+import dynamic from "next/dynamic";
+import { useSearchParams } from "next/navigation";
+import React, { useEffect, useMemo, useState } from "react";
+import { toast } from "sonner";
 
 // Component imports
-import ChatBottombar from '@/components/chat/chat-bottombar';
-import ChatLanding from '@/components/chat/chat-landing';
-import ChatMessageContent from '@/components/chat/chat-message-content';
-import { SimplifiedChatView } from '@/components/chat/simple-chat-view';
-import { PresetReply } from '@/components/chat/preset-reply';
-import { presetReplies } from '@/lib/config-loader';
+import ChatBottombar from "@/components/chat/chat-bottombar";
+import ChatLanding from "@/components/chat/chat-landing";
+import ChatMessageContent from "@/components/chat/chat-message-content";
+import { SimplifiedChatView } from "@/components/chat/simple-chat-view";
+import { PresetReply } from "@/components/chat/preset-reply";
+import { presetReplies } from "@/lib/config-loader";
 import {
   ChatBubble,
   ChatBubbleMessage,
-} from '@/components/ui/chat/chat-bubble';
-import HelperBoost from './HelperBoost';
-import Image from 'next/image';
+} from "@/components/ui/chat/chat-bubble";
+import HelperBoost from "./HelperBoost";
+import Image from "next/image";
 
 // ClientOnly component for client-side rendering
 //@ts-ignore
@@ -48,11 +48,11 @@ const Avatar = dynamic<AvatarProps>(
       // Conditional rendering based on detection
       return (
         <div
-          className={`flex items-center justify-center rounded-full transition-all duration-300 ${hasActiveTool ? 'h-20 w-20' : 'h-28 w-28'}`}
+          className={`flex items-center justify-center rounded-full transition-all duration-300 ${hasActiveTool ? "h-20 w-20" : "h-28 w-28"}`}
         >
           <div
             className="relative cursor-pointer"
-            onClick={() => (window.location.href = '/')}
+            onClick={() => (window.location.href = "/")}
           >
             <Image
               src="/avatar.png"
@@ -65,7 +65,7 @@ const Avatar = dynamic<AvatarProps>(
         </div>
       );
     }),
-  { ssr: false }
+  { ssr: false },
 );
 
 const MOTION_CONFIG = {
@@ -74,13 +74,13 @@ const MOTION_CONFIG = {
   exit: { opacity: 0, y: 20 },
   transition: {
     duration: 0.3,
-    ease: 'easeOut',
+    ease: "easeOut",
   },
 };
 
 const Chat = () => {
   const searchParams = useSearchParams();
-  const initialQuery = searchParams.get('query');
+  const initialQuery = searchParams.get("query");
   const [autoSubmitted, setAutoSubmitted] = useState(false);
   const [loadingSubmit, setLoadingSubmit] = useState(false);
   const [presetReply, setPresetReply] = useState<{
@@ -113,37 +113,49 @@ const Chat = () => {
     },
     onError: (error) => {
       setLoadingSubmit(false);
-      console.error('Chat error:', error.message, error.cause);
+      console.error("Chat error:", error.message, error.cause);
 
       // Handle specific error types
-      if (error.message?.includes('quota') || error.message?.includes('exceeded') || error.message?.includes('429')) {
+      if (
+        error.message?.includes("quota") ||
+        error.message?.includes("exceeded") ||
+        error.message?.includes("429")
+      ) {
         // Show a friendly notification for quota issues
-        toast.error('⚠️ API Quota Exhausted! Free Gemini API limit reached. Please contact Mathias directly or use preset questions. Thank you for understanding! 🙏', {
-          duration: 6000, // Show for 6 seconds
-          style: {
-            background: '#fef3c7',
-            border: '1px solid #f59e0b',
-            color: '#92400e',
-            fontSize: '14px',
-            fontWeight: '500',
+        toast.error(
+          "⚠️ API Quota Exhausted! Free Gemini API limit reached. Please contact Mathias directly or use preset questions. Thank you for understanding! 🙏",
+          {
+            duration: 6000, // Show for 6 seconds
+            style: {
+              background: "#fef3c7",
+              border: "1px solid #f59e0b",
+              color: "#92400e",
+              fontSize: "14px",
+              fontWeight: "500",
+            },
           },
-        });
+        );
 
         // Set error message state for frontend display
-        setErrorMessage('quota_exhausted');
+        setErrorMessage("quota_exhausted");
 
         // Try to add a chat bubble with the error message
         try {
           append({
-            role: 'assistant',
-            content: '⚠️ **API Quota Exhausted**\n\nFree Gemini API limit reached. Please contact Mathias directly or use preset questions below.',
+            role: "assistant",
+            content:
+              "⚠️ **API Quota Exhausted**\n\nFree Gemini API limit reached. Please contact Mathias directly or use preset questions below.",
           });
         } catch (appendError) {
-          console.error('Failed to append error message:', appendError);
+          console.error("Failed to append error message:", appendError);
         }
-      } else if (error.message?.includes('network')) {
-        toast.error('Network error. Please check your connection and try again.');
-        setErrorMessage('Network error. Please check your connection and try again.');
+      } else if (error.message?.includes("network")) {
+        toast.error(
+          "Network error. Please check your connection and try again.",
+        );
+        setErrorMessage(
+          "Network error. Please check your connection and try again.",
+        );
       } else {
         toast.error(`Error: ${error.message}`);
         setErrorMessage(`Error: ${error.message}`);
@@ -151,16 +163,16 @@ const Chat = () => {
     },
     onToolCall: (tool) => {
       const toolName = tool.toolCall.toolName;
-      console.log('Tool call:', toolName);
+      console.log("Tool call:", toolName);
     },
   });
 
   const { currentAIMessage, latestUserMessage, hasActiveTool } = useMemo(() => {
     const latestAIMessageIndex = messages.findLastIndex(
-      (m) => m.role === 'assistant'
+      (m) => m.role === "assistant",
     );
     const latestUserMessageIndex = messages.findLastIndex(
-      (m) => m.role === 'user'
+      (m) => m.role === "user",
     );
 
     const result = {
@@ -175,8 +187,8 @@ const Chat = () => {
       result.hasActiveTool =
         result.currentAIMessage.parts?.some(
           (part) =>
-            part.type === 'tool-invocation' &&
-            part.toolInvocation?.state === 'result'
+            part.type === "tool-invocation" &&
+            part.toolInvocation?.state === "result",
         ) || false;
     }
 
@@ -189,12 +201,12 @@ const Chat = () => {
 
   const isToolInProgress = messages.some(
     (m) =>
-      m.role === 'assistant' &&
+      m.role === "assistant" &&
       m.parts?.some(
         (part) =>
-          part.type === 'tool-invocation' &&
-          part.toolInvocation?.state !== 'result'
-      )
+          part.type === "tool-invocation" &&
+          part.toolInvocation?.state !== "result",
+      ),
   );
 
   //@ts-ignore
@@ -207,17 +219,18 @@ const Chat = () => {
     // Check if this is a preset question first
     if (presetReplies[query]) {
       const preset = presetReplies[query];
-      setPresetReply({ question: query, reply: preset.reply, tool: preset.tool });
+      setPresetReply({
+        question: query,
+        reply: preset.reply,
+        tool: preset.tool,
+      });
       setLoadingSubmit(false);
       return;
     }
 
     setLoadingSubmit(true);
     setPresetReply(null); // Clear any preset reply when submitting new query
-    append({
-      role: 'user',
-      content: query,
-    });
+    setMessages((prev) => [...prev, { id: Date.now().toString(), role: "user" as const, content: query }]);
   };
 
   //@ts-ignore
@@ -231,7 +244,7 @@ const Chat = () => {
     setLoadingSubmit(true);
     setPresetReply(null);
     append({
-      role: 'user',
+      role: "user",
       content: query,
     });
   };
@@ -251,7 +264,7 @@ const Chat = () => {
   useEffect(() => {
     if (initialQuery && !autoSubmitted) {
       setAutoSubmitted(true);
-      setInput('');
+      setInput("");
       submitQuery(initialQuery);
     }
   }, [initialQuery, autoSubmitted]);
@@ -261,7 +274,7 @@ const Chat = () => {
     e.preventDefault();
     if (!input.trim() || isToolInProgress) return;
     submitQueryToAI(input); // User input should go directly to AI
-    setInput('');
+    setInput("");
   };
 
   const handleStop = () => {
@@ -271,7 +284,11 @@ const Chat = () => {
 
   // Check if this is the initial empty state (no messages)
   const isEmptyState =
-    !currentAIMessage && !latestUserMessage && !loadingSubmit && !presetReply && !errorMessage;
+    !currentAIMessage &&
+    !latestUserMessage &&
+    !loadingSubmit &&
+    !presetReply &&
+    !errorMessage;
 
   // Calculate header height based on hasActiveTool
   const headerHeight = hasActiveTool ? 100 : 180;
@@ -279,12 +296,13 @@ const Chat = () => {
   return (
     <div className="relative h-screen overflow-hidden bg-background bg-[linear-gradient(to_right,#8080801a_1px,transparent_1px),linear-gradient(to_bottom,#8080801a_1px,transparent_1px)] bg-[size:64px_64px]">
       <div className="mx-auto flex h-full max-w-[1400px] flex-col lg:flex-row">
-
         {/* ======================================================= */}
         {/* MOBILE HEADER (Hide on desktop)                         */}
         {/* ======================================================= */}
         <div className="lg:hidden fixed top-0 right-0 left-0 z-50 bg-gradient-to-b from-background via-background/90 to-transparent">
-          <div className={`transition-all duration-300 ease-in-out ${hasActiveTool ? 'pt-6 pb-0' : 'py-6'}`}>
+          <div
+            className={`transition-all duration-300 ease-in-out ${hasActiveTool ? "pt-6 pb-0" : "py-6"}`}
+          >
             <div className="flex justify-center">
               <ClientOnly>
                 <Avatar hasActiveTool={hasActiveTool} />
@@ -317,8 +335,13 @@ const Chat = () => {
             <ClientOnly>
               <Avatar hasActiveTool={false} />
             </ClientOnly>
-            <h2 className="mt-4 text-xl font-semibold text-foreground">Mathias's AI</h2>
-            <p className="text-sm text-center text-muted-foreground mt-2">Ask me anything or use the quick questions below to learn more about my profile.</p>
+            <h2 className="mt-4 text-xl font-semibold text-foreground">
+              Mathias's AI
+            </h2>
+            <p className="text-sm text-center text-muted-foreground mt-2">
+              Ask me anything or use the quick questions below to learn more
+              about my profile.
+            </p>
           </div>
 
           {/* Desktop Input & Quick Questions */}
@@ -345,12 +368,14 @@ const Chat = () => {
         {/* MAIN CHAT CONTENT AREA                                  */}
         {/* ======================================================= */}
         <div className="flex-1 flex flex-col h-full relative w-full lg:max-w-4xl xl:max-w-5xl mx-auto">
-
           {/* Desktop Header for active message (Optional) */}
           <div className="hidden lg:block absolute top-0 left-0 right-0 z-20 bg-gradient-to-b from-background via-background/90 to-transparent pt-6 pb-4 px-8 pointer-events-none">
             <AnimatePresence>
               {latestUserMessage && !currentAIMessage && (
-                <motion.div {...MOTION_CONFIG} className="mx-auto max-w-3xl pointer-events-auto">
+                <motion.div
+                  {...MOTION_CONFIG}
+                  className="mx-auto max-w-3xl pointer-events-auto"
+                >
                   <ChatBubble variant="sent">
                     <ChatBubbleMessage>
                       <ChatMessageContent
@@ -371,7 +396,10 @@ const Chat = () => {
             className="flex-1 overflow-y-auto custom-scrollbar px-4 lg:px-8 pb-32 lg:pb-8 lg:pt-8"
             style={{
               // Only apply top padding dynamically on mobile
-              paddingTop: typeof window !== 'undefined' && window.innerWidth < 1024 ? `${headerHeight}px` : undefined
+              paddingTop:
+                typeof window !== "undefined" && window.innerWidth < 1024
+                  ? `${headerHeight}px`
+                  : undefined,
             }}
           >
             <AnimatePresence mode="wait">
@@ -397,7 +425,11 @@ const Chat = () => {
                   />
                 </div>
               ) : errorMessage ? (
-                <motion.div key="error" {...MOTION_CONFIG} className="px-4 pt-4 lg:pt-16">
+                <motion.div
+                  key="error"
+                  {...MOTION_CONFIG}
+                  className="px-4 pt-4 lg:pt-16"
+                >
                   {/* Error Card */}
                   <ChatBubble variant="received">
                     <ChatBubbleMessage className="bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800">
@@ -418,15 +450,19 @@ const Chat = () => {
 
                         <div className="text-sm text-amber-800 dark:text-amber-200 space-y-2">
                           <p>
-                            Hi! I'm currently using the <strong>free version</strong> of Google's Gemini API,
-                            and today's quota has been reached.
+                            Hi! I'm currently using the{" "}
+                            <strong>free version</strong> of Google's Gemini
+                            API, and today's quota has been reached.
                           </p>
 
                           <div className="bg-amber-100 dark:bg-amber-900/30 p-3 rounded-lg mt-3">
                             <p className="font-medium mb-2">What you can do:</p>
                             <ul className="list-disc list-inside space-y-1 text-xs">
                               <li>Contact me directly for a live demo</li>
-                              <li>Use the preset questions below for instant responses</li>
+                              <li>
+                                Use the preset questions below for instant
+                                responses
+                              </li>
                               <li>Come back tomorrow when the quota resets</li>
                             </ul>
                           </div>
@@ -436,12 +472,13 @@ const Chat = () => {
                           <button
                             onClick={() => {
                               setErrorMessage(null);
-                              const preset = presetReplies["How can I reach you?"];
+                              const preset =
+                                presetReplies["How can I reach you?"];
                               if (preset) {
                                 setPresetReply({
                                   question: "How can I reach you?",
                                   reply: preset.reply,
-                                  tool: preset.tool
+                                  tool: preset.tool,
                                 });
                               }
                             }}
@@ -452,7 +489,7 @@ const Chat = () => {
                           <button
                             onClick={() => {
                               setErrorMessage(null);
-                              window.location.href = '/';
+                              window.location.href = "/";
                             }}
                             className="px-4 py-2 bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-sm rounded-md hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors"
                           >
@@ -477,7 +514,11 @@ const Chat = () => {
                 </div>
               ) : (
                 loadingSubmit && (
-                  <motion.div key="loading" {...MOTION_CONFIG} className="px-4 pt-18 lg:pt-32">
+                  <motion.div
+                    key="loading"
+                    {...MOTION_CONFIG}
+                    className="px-4 pt-18 lg:pt-32"
+                  >
                     <ChatBubble variant="received">
                       <ChatBubbleMessage isLoading />
                     </ChatBubble>
@@ -509,7 +550,6 @@ const Chat = () => {
               </div>
             </div>
           </div>
-
         </div>
       </div>
     </div>

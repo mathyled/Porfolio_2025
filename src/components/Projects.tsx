@@ -1,4 +1,5 @@
 import { ExternalLink, Video, Github, Mail } from 'lucide-react';
+import { StaticImageData } from 'next/image';
 import { useLanguage } from '../contexts/LanguageContext';
 import { t, projectTranslations } from '../i18n';
 import mobileAppImage from '../images/mobile-app-project.png';
@@ -13,7 +14,7 @@ interface Project {
   demo?: string;
   video?: string;
   github?: string;
-  image?: string;
+  image?: string | StaticImageData;
   imageAlt?: string;
 }
 
@@ -68,7 +69,7 @@ function ProjectCard({ project }: { project: Project }) {
       {project.image && (
         <div className="mb-4">
           <img
-            src={project.image}
+            src={typeof project.image === 'string' ? project.image : (project.image as any).src}
             alt={project.imageAlt || project.title}
             loading="lazy"
             className="w-full h-48 object-cover rounded-lg border border-gray-100"
