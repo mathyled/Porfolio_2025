@@ -47,7 +47,7 @@ const AvailabilityCard = ({ data }: AvailabilityCardProps) => {
 
   const handleContactClick = () => {
     // Navigate to home page with the contact preset question
-    router.push('/?query=How can I reach you?');
+    router.push('/?query=¿Cómo puedo contactarte?');
   };
 
   return (
@@ -64,7 +64,7 @@ const AvailabilityCard = ({ data }: AvailabilityCardProps) => {
           <div className="bg-muted h-16 w-16 overflow-hidden rounded-full shadow-md">
             <Image
               src="/profile.png"
-              alt="Mathias's avatar"
+              alt="Avatar de Mathias"
               width={64}
               height={64}
               className="h-full w-full object-cover object-[center_top_-5%] scale-95"
@@ -75,7 +75,7 @@ const AvailabilityCard = ({ data }: AvailabilityCardProps) => {
               Mathias Ledesma
             </h2>
             <p className="text-muted-foreground text-sm">
-              Available for Opportunities
+              Disponible para nuevas oportunidades
             </p>
           </div>
         </div>
@@ -87,10 +87,10 @@ const AvailabilityCard = ({ data }: AvailabilityCardProps) => {
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-500 opacity-75"></span>
               <span className="relative inline-flex h-2 w-2 rounded-full bg-green-500"></span>
             </span>
-            Available Now
+            Disponible ahora
           </span>
           <p className="text-xs text-muted-foreground text-center sm:text-right">
-            Open to full-time & internship roles
+            Busco roles Full-time o Freelance
           </p>
         </div>
       </div>
@@ -101,41 +101,41 @@ const AvailabilityCard = ({ data }: AvailabilityCardProps) => {
           <div className="h-8 w-8 rounded-full bg-green-500 flex items-center justify-center">
             <Briefcase className="h-4 w-4 text-white" />
           </div>
-          <h3 className="text-lg font-semibold text-foreground">Current Availability Status</h3>
+          <h3 className="text-lg font-semibold text-foreground">Estado de Disponibilidad Actual</h3>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
-            <p className="text-sm font-medium text-foreground mb-1">Status</p>
+            <p className="text-sm font-medium text-foreground mb-1">Estado</p>
             <p className="text-sm text-green-600 dark:text-green-400 font-semibold">
-              {data?.availability || "✅ Available for immediate start"}
+              {data?.availability || "✅ Disponible para incorporación inmediata"}
             </p>
           </div>
           <div>
-            <p className="text-sm font-medium text-foreground mb-1">Looking for</p>
+            <p className="text-sm font-medium text-foreground mb-1">Buscando</p>
             <p className="text-sm text-blue-600 dark:text-blue-400 font-semibold">
-              Full-time roles, Internships & Contract work
+              Roles Full-time, Proyectos Freelance y SaaS
             </p>
           </div>
         </div>
       </div>
 
-      {/* Internship Info */}
+      {/* Internship Info (Now General Opportunity Info) */}
       <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
         <div className="flex items-start gap-3">
           <CalendarDays className="mt-1 h-5 w-5 text-blue-500" />
           <div>
-            <p className="text-foreground text-sm font-medium">Duration</p>
+            <p className="text-foreground text-sm font-medium">Modalidad</p>
             <p className="text-muted-foreground text-sm">
-              {data?.availability || "Available for full-time roles starting immediately"}
+              {data?.preferences.workMode || "Disponible para roles full-time con inicio inmediato"}
             </p>
           </div>
         </div>
         <div className="flex items-start gap-3">
           <Globe className="mt-1 h-5 w-5 text-green-500" />
           <div>
-            <p className="text-foreground text-sm font-medium">Location</p>
+            <p className="text-foreground text-sm font-medium">Ubicación</p>
             <p className="text-muted-foreground text-sm">
-              {data?.preferences.location || "Based in India, open to relocation for the right opportunity 🇮🇳"}
+              {data?.preferences.location || "Basado en Argentina, abierto a relocalización o remoto 🇦🇷"}
             </p>
           </div>
         </div>
@@ -144,17 +144,17 @@ const AvailabilityCard = ({ data }: AvailabilityCardProps) => {
         <div className="flex items-start gap-3 sm:col-span-2">
           <Code2 className="mt-1 h-5 w-5 text-purple-500" />
           <div className="w-full">
-            <p className="text-foreground text-sm font-medium">Tech stack</p>
+            <p className="text-foreground text-sm font-medium">Stack Tecnológico</p>
             <div className="text-muted-foreground grid grid-cols-1 gap-y-1 text-sm sm:grid-cols-2">
               <ul className="decoration-none list-disc pl-4">
                 {data?.skills.technical.slice(0, 4).map((skill, index) => (
                   <li key={index}>{skill}</li>
                 )) || (
                     <>
-                      <li>Java, SQL, JavaScript, HTML/CSS</li>
-                      <li>React.js, Next.js, TypeScript, Tailwind CSS</li>
-                      <li>Node.js, Express.js, NestJS</li>
-                      <li>Vercel, AWS, Docker</li>
+                      <li>JavaScript, TypeScript, HTML/CSS</li>
+                      <li>React.js, Next.js (App Router), Tailwind CSS</li>
+                      <li>Node.js, NestJS, Express.js</li>
+                      <li>MongoDB, PostgreSQL, Prisma</li>
                     </>
                   )}
               </ul>
@@ -163,18 +163,18 @@ const AvailabilityCard = ({ data }: AvailabilityCardProps) => {
                   <li key={index}>{skill}</li>
                 )) || (
                     <>
-                      <li>Docker, Git, AWS</li>
-                      <li>Firebase, MongoDB, Supabase</li>
-                      <li>RESTful APIs, GraphQL</li>
+                      <li>Vercel, Docker, Git/GitHub</li>
+                      <li>Java (Spring Boot), Python, Go</li>
+                      <li>Arquitectura de Microservicios y SaaS</li>
                     </>
                   )}
                 <li>
-                  <a
-                    href="/?query=What%20are%20your%20skills%3F%20Give%20me%20a%20list%20of%20your%20soft%20and%20hard%20skills."
-                    className="cursor-pointer items-center text-blue-500 underline"
+                  <button
+                    onClick={() => router.push('/?query=¿Cuáles son tus habilidades técnicas?')}
+                    className="cursor-pointer items-center text-blue-500 underline text-sm"
                   >
-                    See more
-                  </a>
+                    Ver más habilidades
+                  </button>
                 </li>
               </ul>
             </div>
@@ -182,29 +182,32 @@ const AvailabilityCard = ({ data }: AvailabilityCardProps) => {
         </div>
       </div>
 
-      {/* What I bring */}
+      {/* Lo que aporto */}
       <div className="mt-10">
         <h3 className="text-foreground mb-4 text-lg font-semibold tracking-tight">
-          What I bring to the table
+          Lo que aporto como profesional
         </h3>
         <ul className="text-foreground/80 text-sm space-y-3 list-disc list-inside marker:text-primary">
           <li>
-            {data?.experience.internshipCompleted || "4 years at a high-growth YC EdTech startup (Henry), bringing a strong, results-driven startup mindset."}
+            {data?.experience.internshipCompleted || "+3 años de experiencia en una startup EdTech escalable (Henry), con mentalidad orientada a resultados."}
           </li>
           <li>
-            {data?.experience.freelanceWork || "End-to-End development of custom SaaS platforms and digital ecosystems as a freelance engineer."}
+            {data?.experience.freelanceWork || "Desarrollo integral de plataformas SaaS y ecosistemas digitales complejos como ingeniero freelance."}
           </li>
           <li>
-            {data?.achievements[0] || "Proven ability to build and scale products with real business impact, currently serving 300+ active users."}
+            {data?.experience.projectExperience || "Capacidad comprobada para diseñar y lanzar productos con impacto real (actualmente sirviendo a +300 usuarios)."}
+          </li>
+          <li>
+            Visión integral: desde arquitectura de bases de datos hasta interfaces de usuario modernas y accesibles.
           </li>
         </ul>
       </div>
 
-      {/* Goal */}
+      {/* Objetivo */}
       <div className="mt-8">
-        <p className="text-foreground mb-2 text-lg font-semibold">Goal</p>
+        <p className="text-foreground mb-2 text-lg font-semibold">Objetivo</p>
         <p className="text-foreground text-sm">
-          {data?.lookingFor.growthOpportunities || "Looking for roles that offer learning and advancement opportunities with experienced teams."} I want to work on {data?.lookingFor.technicalChallenges || "cutting-edge technologies"} that {data?.lookingFor.impactfulWork || "solve real-world problems and make a meaningful impact"}. I'm passionate, adaptable, and ready to contribute to {data?.lookingFor.collaboration || "collaborative, innovative environments"}! 🚀
+          {data?.lookingFor.growthOpportunities || "Busco integrarme en equipos con desafíos tecnológicos reales donde pueda aportar mi visión técnica y proactividad."} Me apasiona trabajar con {data?.lookingFor.technicalChallenges || "tecnologías de vanguardia"} que {data?.lookingFor.impactfulWork || "resuelvan problemas del mundo real y generen un impacto significativo"}. Soy adaptable, aprendo rápido y estoy listo para contribuir en {data?.lookingFor.collaboration || "entornos innovadores y colaborativos"}. 🚀
         </p>
       </div>
 
@@ -212,9 +215,9 @@ const AvailabilityCard = ({ data }: AvailabilityCardProps) => {
       <div className="mt-10 flex justify-center">
         <button
           onClick={handleContactClick}
-          className="cursor-pointer rounded-full bg-black px-6 py-3 font-semibold text-white transition-colors duration-300 hover:bg-zinc-800"
+          className="cursor-pointer rounded-full bg-black px-6 py-3 font-semibold text-white transition-all duration-300 hover:bg-zinc-800 shadow-lg hover:shadow-black/20"
         >
-          Contact me
+          Contáctame
         </button>
       </div>
     </motion.div>
