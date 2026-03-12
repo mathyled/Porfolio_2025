@@ -87,13 +87,13 @@ const ChatLanding: React.FC<ChatLandingProps> = ({ submitQuery, handlePresetRepl
             className="flex items-center gap-2 px-3 py-1 rounded-full bg-primary/5 border border-primary/10 text-primary text-[10px] font-bold uppercase tracking-[0.2em] mb-6 mx-auto w-fit"
           >
             <Sparkles className="w-3 h-3" />
-            <span>AI-Native Portfolio v2.1</span>
+            <span>Interactive Portfolio v2.1</span>
           </motion.div>
           <h1 className="mb-4 text-4xl md:text-6xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-b from-foreground to-foreground/60">
-            I'm Mathias
+            Soy Mathias
           </h1>
           <p className="text-muted-foreground text-lg md:text-xl mx-auto max-w-lg font-medium">
-            Frontend Engineer specializing in High-Performance Web Applications & AI Integration.
+            Ingeniero Frontend especializado en Aplicaciones Web de Alto Rendimiento y Automatización.
           </p>
         </motion.div>
 
@@ -109,7 +109,7 @@ const ChatLanding: React.FC<ChatLandingProps> = ({ submitQuery, handlePresetRepl
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75"></span>
               <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-green-500"></span>
             </span>
-            Available for Opportunities
+            Disponible para oportunidades
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
           </motion.button>
         </motion.div>
