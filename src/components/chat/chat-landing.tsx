@@ -38,6 +38,14 @@ const ChatLanding: React.FC<ChatLandingProps> = ({ submitQuery, handlePresetRepl
   ];
 
   const handleQuestionClick = (questionText: string) => {
+    if (questionText === 'Muéstrame tus proyectos') {
+      const element = document.getElementById('featured-projects');
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+        return;
+      }
+    }
+
     const preset = presetReplies[questionText as keyof typeof presetReplies];
 
     if (preset && handlePresetReply) {
@@ -80,7 +88,7 @@ const ChatLanding: React.FC<ChatLandingProps> = ({ submitQuery, handlePresetRepl
         {/* Welcome message */}
         <motion.div className="mb-12 text-center relative" variants={itemVariants}>
           <div className="absolute -top-12 left-1/2 -translate-x-1/2 w-24 h-24 bg-primary/20 blur-3xl rounded-full" />
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
@@ -90,7 +98,7 @@ const ChatLanding: React.FC<ChatLandingProps> = ({ submitQuery, handlePresetRepl
             <span>Interactive Portfolio v2.1</span>
           </motion.div>
           <h1 className="mb-4 text-4xl md:text-6xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-b from-foreground to-foreground/60">
-            Soy Mathias
+            Mathias Ledesma
           </h1>
           <p className="text-muted-foreground text-lg md:text-xl mx-auto max-w-lg font-medium">
             Ingeniero Frontend especializado en Aplicaciones Web de Alto Rendimiento y Automatización.
@@ -136,7 +144,7 @@ const ChatLanding: React.FC<ChatLandingProps> = ({ submitQuery, handlePresetRepl
         </motion.div>
 
         {/* Projects Section Trigger */}
-        <motion.div 
+        <motion.div
           className="flex flex-col items-center gap-4 mb-4"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}

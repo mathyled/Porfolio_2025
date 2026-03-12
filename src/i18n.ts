@@ -42,6 +42,10 @@ export const translations = {
 export const projectTranslations = {
   es: [
     {
+      title: 'MateTech',
+      description: 'Mi web personal para captar clientes como freelance. Cuenta con un formulario integrado con Airtable y notificaciones en tiempo real vía Telegram Bot.',
+    },
+    {
       title: 'E-Commerce Platform',
       description: 'Plataforma de comercio electrónico completa con carrito de compras, autenticación y panel de administración.',
     },
@@ -59,6 +63,10 @@ export const projectTranslations = {
     }
   ],
   en: [
+    {
+      title: 'MateTech',
+      description: 'Personal website for freelance client acquisition. Features Airtable integration for lead management and real-time Telegram Bot notifications.',
+    },
     {
       title: 'E-Commerce Platform',
       description: 'Complete e-commerce platform with shopping cart, integrated payments, and admin panel.',

@@ -14,58 +14,55 @@ const ProjectContent = ({ project }: { project: { title: string } }) => {
   if (!projectData) return null;
 
   return (
-    <div className="bg-card text-card-foreground max-w-4xl space-y-6 p-0">
-      {/* Header */}
-      <div className="space-y-4">
-        <div className="flex items-center gap-3">
-          <div className="bg-primary/10 text-primary rounded-lg p-2">
-            <Img className="h-6 w-6" />
-          </div>
-          <div>
-            <h3 className="text-xl font-semibold">{projectData.title}</h3>
-            <p className="text-muted-foreground text-sm">{projectData.date}</p>
-          </div>
+    <div className="w-full space-y-10 p-0">
+      {/* Description & Metadata */}
+      <div className="space-y-6">
+        <div className="flex items-center gap-3 text-sm font-semibold tracking-wide uppercase text-primary/80">
+          <span>{projectData.date}</span>
+          {projectData.status && (
+            <>
+              <span className="w-1 h-1 rounded-full bg-primary/30" />
+              <span className={`px-3 py-1 rounded-full text-[10px] ${
+                projectData.status === 'Completed' ? 'bg-green-100 text-green-800 dark:bg-green-500/10 dark:text-green-400' :
+                projectData.status === 'Ongoing' ? 'bg-blue-100 text-blue-800 dark:bg-blue-500/10 dark:text-blue-400' :
+                'bg-gray-100 text-gray-800 dark:bg-white/10 dark:text-gray-400'
+              }`}>
+                {projectData.status}
+              </span>
+            </>
+          )}
         </div>
 
-        <p className="text-muted-foreground leading-relaxed">
+        <p className="text-xl md:text-2xl text-neutral-600 dark:text-neutral-300 leading-relaxed max-w-4xl font-sans font-light">
           {projectData.description}
         </p>
       </div>
 
-      {/* Status & Achievements */}
-      {(projectData.status || projectData.achievements || projectData.metrics) && (
-        <div className="space-y-3">
-          {projectData.status && (
-            <div className="flex items-center gap-2">
-              <span className="text-sm font-medium">Status:</span>
-              <span className={`text-sm px-2 py-1 rounded-full ${projectData.status === 'Completed' ? 'bg-green-100 text-green-800' :
-                  projectData.status === 'Ongoing' ? 'bg-blue-100 text-blue-800' :
-                    'bg-gray-100 text-gray-800'
-                }`}>
-                {projectData.status}
-              </span>
-            </div>
-          )}
-
+      {/* Achievements & Metrics */}
+      {(projectData.achievements || projectData.metrics) && (
+        <div className="grid md:grid-cols-2 gap-8 ring-1 ring-neutral-200 dark:ring-neutral-800 p-8 rounded-3xl bg-neutral-50/50 dark:bg-neutral-800/20">
           {projectData.achievements && (
-            <div>
-              <h4 className="font-medium mb-1">Achievements</h4>
-              <ul className="text-sm text-muted-foreground list-disc list-inside">
+            <div className="space-y-4">
+              <h4 className="text-sm font-bold uppercase tracking-widest text-neutral-500">Achievements</h4>
+              <ul className="space-y-2">
                 {projectData.achievements.map((achievement, index) => (
-                  <li key={index}>{achievement}</li>
+                  <li key={index} className="flex items-start gap-2 text-neutral-600 dark:text-neutral-400 text-sm">
+                    <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0" />
+                    {achievement}
+                  </li>
                 ))}
               </ul>
             </div>
           )}
 
           {projectData.metrics && (
-            <div>
-              <h4 className="font-medium mb-1">Key Metrics</h4>
-              <div className="flex flex-wrap gap-2">
+            <div className="space-y-4">
+              <h4 className="text-sm font-bold uppercase tracking-widest text-neutral-500">Key Metrics</h4>
+              <div className="grid grid-cols-2 gap-3">
                 {projectData.metrics.map((metric, index) => (
-                  <span key={index} className="text-sm bg-blue-100 text-blue-800 px-2 py-1 rounded">
-                    {metric}
-                  </span>
+                  <div key={index} className="px-4 py-3 bg-white dark:bg-neutral-900 rounded-2xl border border-neutral-200 dark:border-neutral-800 shadow-sm">
+                    <span className="text-lg font-bold text-primary">{metric}</span>
+                  </div>
                 ))}
               </div>
             </div>
@@ -75,13 +72,13 @@ const ProjectContent = ({ project }: { project: { title: string } }) => {
 
       {/* Tech Stack */}
       {projectData.techStack && projectData.techStack.length > 0 && (
-        <div className="space-y-3">
-          <h4 className="font-medium">Tech Stack</h4>
+        <div className="space-y-4">
+          <h4 className="text-sm font-bold uppercase tracking-widest text-neutral-500">Tech Stack</h4>
           <div className="flex flex-wrap gap-2">
             {projectData.techStack.map((tech, index) => (
               <span
                 key={index}
-                className="bg-accent text-accent-foreground rounded-full px-3 py-1 text-sm"
+                className="bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 rounded-xl px-4 py-2 text-sm font-medium border border-neutral-200 dark:border-neutral-700"
               >
                 {tech}
               </span>
@@ -92,20 +89,20 @@ const ProjectContent = ({ project }: { project: { title: string } }) => {
 
       {/* Links */}
       {projectData.links && projectData.links.length > 0 && (
-        <div className="space-y-3">
-          <h4 className="font-medium">Links</h4>
-          <div className="flex flex-wrap gap-3">
+        <div className="space-y-4">
+          <h4 className="text-sm font-bold uppercase tracking-widest text-neutral-500">Project Links</h4>
+          <div className="flex flex-wrap gap-4">
             {projectData.links.map((link, index) => (
               <a
                 key={index}
                 href={link.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-primary hover:text-primary/80 flex items-center gap-2 transition-colors"
+                className="group flex items-center gap-3 px-6 py-3 bg-primary text-primary-foreground rounded-2xl hover:opacity-90 transition-all shadow-lg shadow-primary/20"
               >
                 <Link className="h-4 w-4" />
-                {link.name}
-                <ChevronRight className="h-4 w-4" />
+                <span className="font-semibold">{link.name}</span>
+                <ChevronRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
               </a>
             ))}
           </div>

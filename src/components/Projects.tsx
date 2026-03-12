@@ -6,6 +6,7 @@ import mobileAppImage from '../images/mobile-app-project.png';
 import musicLearnImage from '../images/music-learn-project.png';
 import ecommerceProjectImage from '../images/ecommerce-project.png';
 import runningTeamImage from '../images/cep.png';
+import matetechImage from '../images/matetech-sitio.png';
 
 interface Project {
   title: string;
@@ -19,7 +20,12 @@ interface Project {
 }
 
 const baseProjects = [
-
+  {
+    tech: ['Next.js', 'Tailwind', 'Airtable', 'Telegram API'],
+    demo: 'https://matetech.com.ar/',
+    image: matetechImage,
+    imageAlt: 'Vista previa de MateTech',
+  },
   {
     tech: ['React', 'Bootstrap', 'CSS Modules'],
     demo: 'https://my-ecommerce-ten-iota.vercel.app/',

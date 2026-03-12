@@ -131,7 +131,7 @@ const AvailabilityCard = ({ data }: AvailabilityCardProps) => {
           <div>
             <p className="text-foreground text-sm font-medium">Ubicación</p>
             <p className="text-muted-foreground text-sm">
-              {data?.preferences.location || "Argentina, abierto modalidad presencial o remoto 🇦🇷"}
+              {data?.preferences.location || "Argentina, modalidad presencial o remoto 🇦🇷"}
             </p>
           </div>
         </div>
@@ -165,12 +165,7 @@ const AvailabilityCard = ({ data }: AvailabilityCardProps) => {
                     </>
                   )}
                 <li>
-                  <button
-                    onClick={() => router.push('/?query=¿Cuáles son tus habilidades técnicas?')}
-                    className="cursor-pointer items-center text-blue-500 underline text-sm"
-                  >
-                    Ver más habilidades
-                  </button>
+
                 </li>
               </ul>
             </div>

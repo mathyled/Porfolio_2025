@@ -12,9 +12,13 @@ export default function AllProjects() {
   return (
     <div className="w-full h-full pt-8">
       <h2 className="max-w-7xl mx-auto text-xl md:text-3xl font-bold text-neutral-800 dark:text-neutral-200 font-sans">
-        My Projects
+        Mis Proyectos
       </h2>
-      <Carousel items={cards} />
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+        {data.map((card, index) => (
+          <Card key={card.title} card={card} index={index} layout={true} />
+        ))}
+      </div>
     </div>
   );
 }

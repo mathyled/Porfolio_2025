@@ -10,7 +10,7 @@ class ConfigParser {
   // Generate system prompt for AI chatbot
   generateSystemPrompt(): string {
     const { personal, education, experience, skills, projects, personality, internship } = this.config;
-    
+
     // Safe property access with fallbacks
     const programming = skills.programming || [];
     const ml_ai = skills.ml_ai || [];
@@ -19,7 +19,7 @@ class ConfigParser {
     const devops_cloud = skills.devops_cloud || [];
     const iot_hardware = skills.iot_hardware || [];
     const soft_skills = skills.soft_skills || [];
-    
+
     return `
 # Interview Scenario: You are ${personal.name}
 
@@ -99,7 +99,7 @@ REMEMBER: You are NOT an AI assistant - you are ${personal.name} being interview
   // Generate contact information
   generateContactInfo(): ContactInfo {
     const { personal, social } = this.config;
-    
+
     return {
       name: personal.name,
       email: personal.email,
@@ -115,7 +115,7 @@ REMEMBER: You are NOT an AI assistant - you are ${personal.name} being interview
   // Generate profile information for presentation
   generateProfileInfo(): ProfileInfo {
     const { personal } = this.config;
-    
+
     return {
       name: personal.name,
       age: personal.age ? `${personal.age} years old` : 'Professional Age',
@@ -129,7 +129,7 @@ REMEMBER: You are NOT an AI assistant - you are ${personal.name} being interview
   // Generate skills data with categories
   generateSkillsData() {
     const { skills } = this.config;
-    
+
     return [
       {
         category: 'Programming Languages',
@@ -182,40 +182,35 @@ REMEMBER: You are NOT an AI assistant - you are ${personal.name} being interview
   // Generate preset replies based on questions
   generatePresetReplies() {
     const { personal } = this.config;
-    
+
     const replies: Record<string, { reply: string; tool: string }> = {};
-    
+
     // Only generate presets for main category questions - Translated to Spanish to match UI
     replies["¿Quién eres?"] = {
       reply: personal.bio,
       tool: "getPresentation"
     };
-    
+
     replies["¿Cuáles son tus habilidades técnicas?"] = {
       reply: `Mi experiencia técnica abarca múltiples dominios...`,
       tool: "getSkills"
     };
-    
-    replies["Muéstrame tus proyectos"] = {
-      reply: `Aquí están algunos de mis proyectos clave...`,
-      tool: "getProjects"
-    };
-    
+
     replies["¿Puedo ver tu currículum?"] = {
       reply: `Aquí tienes mi currículum con todos los detalles...`,
       tool: "getResume"
     };
-    
+
     replies["¿Cómo puedo contactarte?"] = {
       reply: `Aquí tienes cómo puedes contactarme...`,
       tool: "getContact"
     };
-    
+
     replies["¿Estás buscando nuevas oportunidades?"] = {
       reply: `Aquí están mis oportunidades actuales y disponibilidad...`,
       tool: "getInternship"
     };
-    
+
     return replies;
   }
 
@@ -227,11 +222,11 @@ REMEMBER: You are NOT an AI assistant - you are ${personal.name} being interview
   // Generate internship information
   generateInternshipInfo() {
     const { internship, personal, social } = this.config;
-    
+
     if (!internship.seeking) {
       return "No estoy buscando nuevas oportunidades en este momento.";
     }
-    
+
     return `Esto es lo que estoy buscando 👇
 
 - 📅 **Modalidad**: ${internship.duration} con inicio **${internship.startDate}**

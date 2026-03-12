@@ -122,6 +122,32 @@
   ],
   "projects": [
     {
+      "title": "MateTech",
+      "category": "Freelance / Automation",
+      "description": "Mi web personal para captar clientes freelance. Cuenta con un formulario integrado con Airtable y notificaciones en tiempo real vía Telegram Bot para una respuesta instantánea.",
+      "techStack": [
+        "Next.js",
+        "Tailwind CSS",
+        "Airtable",
+        "Telegram API"
+      ],
+      "date": "2025",
+      "status": "Completed",
+      "featured": true,
+      "links": [
+        {
+          "name": "Live Site",
+          "url": "https://matetech.com.ar/"
+        }
+      ],
+      "images": [
+        {
+          "src": "/matetech-sitio.png",
+          "alt": "MateTech"
+        }
+      ]
+    },
+    {
       "title": "CEP Running Team",
       "category": "SaaS / Management",
       "description": "Plataforma SaaS a medida para la gestión operativa de un equipo de corredores (+300 alumnos). Incluye Legajo Médico Digital, Logística de Carreras y Calculadoras de Rendimiento (VAM). Módulo reserva de turnos para entrenamientos. Gestión de pagos y suscripciones.",
@@ -283,7 +309,7 @@
     "fileType": "PDF",
     "lastUpdated": "2026",
     "fileSize": "",
-    "downloadUrl": "/dev-net-mathias-ledesma.pdf"
+    "downloadUrl": "/dev-cv-mathias-ledesma.pdf"
   },
   "chatbot": {
     "name": "Mathias's AI",

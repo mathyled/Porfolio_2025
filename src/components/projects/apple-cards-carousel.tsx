@@ -35,7 +35,7 @@ const IconX = ({ className }: { className?: string }) => (
   </svg>
 );
 
-type Card = {
+export type CardType = {
   src: string;
   title: string;
   category: string;
@@ -196,7 +196,7 @@ export const Card = ({
   index,
   layout = false,
 }: {
-  card: Card;
+  card: CardType;
   index: number;
   layout?: boolean;
 }) => {
@@ -237,53 +237,40 @@ export const Card = ({
     <>
       <AnimatePresence>
         {open && (
-          <div className="fixed inset-0 z-52 h-screen overflow-auto">
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              className="fixed inset-0 h-full w-full bg-black/80 backdrop-blur-lg"
-            />
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              ref={containerRef}
-              layoutId={layout ? `card-${card.title}` : undefined}
-              className="relative z-[60] mx-auto my-10 h-fit max-w-5xl rounded-3xl bg-white font-sans dark:bg-neutral-900"
-            >
-              {/* Sticky close button */}
-              <div className="sticky top-4 z-52 flex justify-end px-8 pt-8 md:px-14 md:pt-8">
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[100] h-screen w-full bg-white dark:bg-neutral-950 overflow-y-auto font-sans"
+          >
+            <div className="max-w-7xl mx-auto min-h-screen relative flex flex-col p-4 md:p-10">
+              {/* Close Button - Top Right */}
+              <div className="flex justify-end mb-8">
                 <button
-                  className="flex h-8 w-8 items-center justify-center rounded-full bg-black/90 shadow-md dark:bg-white/90"
+                  className="flex h-12 w-12 items-center justify-center rounded-full bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 transition-colors shadow-md"
                   onClick={handleClose}
                 >
-                  <IconX className="h-6 w-6 text-neutral-100 dark:text-neutral-900" />
+                  <IconX className="h-6 w-6 text-neutral-900 dark:text-neutral-100" />
                 </button>
               </div>
 
-              {/* Header section with consistent padding */}
-              <div className="relative px-8 pt-2 pb-0 md:px-14">
-                <div>
-                  <motion.p
-                    layoutId={layout ? `category-${card.title}` : undefined}
-                    className="text-base font-medium text-black dark:text-white"
-                  >
+              {/* Modal Content */}
+              <div className="flex-grow">
+                <div className="mb-12">
+                  <p className="text-sm md:text-base font-bold tracking-[0.2em] text-primary mb-4 uppercase">
                     {card.category}
-                  </motion.p>
-                  <motion.p
-                    layoutId={layout ? `title-${card.title}` : undefined}
-                    className="mt-4 text-2xl font-semibold text-neutral-700 md:text-5xl dark:text-white"
-                  >
+                  </p>
+                  <h2 className="text-5xl md:text-8xl font-black text-neutral-900 dark:text-white leading-tight tracking-tighter">
                     {card.title}
-                  </motion.p>
+                  </h2>
+                </div>
+
+                <div className="w-full">
+                  {card.content}
                 </div>
               </div>
-
-              {/* Content with consistent padding */}
-              <div className="px-8 pt-8 pb-14 md:px-14">{card.content}</div>
-            </motion.div>
-          </div>
+            </div>
+          </motion.div>
         )}
       </AnimatePresence>
       <motion.button
