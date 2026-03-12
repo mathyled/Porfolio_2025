@@ -11,6 +11,15 @@ class ConfigParser {
   generateSystemPrompt(): string {
     const { personal, education, experience, skills, projects, personality, internship } = this.config;
     
+    // Safe property access with fallbacks
+    const programming = skills.programming || [];
+    const ml_ai = skills.ml_ai || [];
+    const web_development = skills.web_development || [];
+    const databases = skills.databases || [];
+    const devops_cloud = skills.devops_cloud || [];
+    const iot_hardware = skills.iot_hardware || [];
+    const soft_skills = skills.soft_skills || [];
+    
     return `
 # Interview Scenario: You are ${personal.name}
 
@@ -39,20 +48,20 @@ CRITICAL: You must use tools to provide comprehensive information, not just text
 ## Your Professional Background
 
 ### Personal Information
-- Age: ${personal.age}
+${personal.age ? `- Age: ${personal.age}` : ''}
 - Current Status: ${personal.title}
 - Location: ${personal.location}
 - Education: ${education.current.degree} at ${education.current.institution} (graduating ${education.current.graduationDate})
-- Academic Performance: CGPA ${education.current.cgpa}
-- Achievements: ${education.achievements.join(', ')}
+- Academic Performance: ${education.current.cgpa ? `CGPA ${education.current.cgpa}` : 'N/A'}
+- Achievements: ${(education.achievements || []).join(', ')}
 
 ### Technical Expertise
-- Programming Languages: ${skills.programming.join(', ')}
-- ML/AI Technologies: ${skills.ml_ai.join(', ')}
-- Web Development: ${skills.web_development.join(', ')}
-- Database Systems: ${skills.databases.join(', ')}
-- DevOps & Cloud: ${skills.devops_cloud.join(', ')}
-- IoT & Hardware: ${skills.iot_hardware.join(', ')}
+- Programming Languages: ${programming.join(', ')}
+- ML/AI Technologies: ${ml_ai.join(', ')}
+- Web Development: ${web_development.join(', ')}
+- Database Systems: ${databases.join(', ')}
+- DevOps & Cloud: ${devops_cloud.join(', ')}
+- IoT & Hardware: ${iot_hardware.join(', ')}
 
 ### Professional Experience
 ${experience.map(exp => `- ${exp.position} at ${exp.company} (${exp.duration}): ${exp.description}`).join('\n')}
@@ -111,7 +120,7 @@ REMEMBER: You are NOT an AI assistant - you are ${personal.name} being interview
     
     return {
       name: personal.name,
-      age: `${personal.age} years old`,
+      age: personal.age ? `${personal.age} years old` : 'Professional Age',
       location: personal.location,
       description: personal.bio,
       src: personal.avatar,
@@ -126,40 +135,40 @@ REMEMBER: You are NOT an AI assistant - you are ${personal.name} being interview
     return [
       {
         category: 'Programming Languages',
-        skills: skills.programming,
+        skills: skills.programming || [],
         color: 'bg-blue-50 text-blue-600 border border-blue-200'
       },
       {
         category: 'ML/AI Technologies',
-        skills: skills.ml_ai,
+        skills: skills.ml_ai || [],
         color: 'bg-purple-50 text-purple-600 border border-purple-200'
       },
       {
         category: 'Web Development',
-        skills: skills.web_development,
+        skills: skills.web_development || [],
         color: 'bg-green-50 text-green-600 border border-green-200'
       },
       {
         category: 'Databases',
-        skills: skills.databases,
+        skills: skills.databases || [],
         color: 'bg-orange-50 text-orange-600 border border-orange-200'
       },
       {
         category: 'DevOps & Cloud',
-        skills: skills.devops_cloud,
+        skills: skills.devops_cloud || [],
         color: 'bg-emerald-50 text-emerald-600 border border-emerald-200'
       },
       {
         category: 'IoT & Hardware',
-        skills: skills.iot_hardware,
+        skills: skills.iot_hardware || [],
         color: 'bg-indigo-50 text-indigo-600 border border-indigo-200'
       },
       {
         category: 'Soft Skills',
-        skills: skills.soft_skills,
+        skills: skills.soft_skills || [],
         color: 'bg-amber-50 text-amber-600 border border-amber-200'
       }
-    ].filter(category => category.skills.length > 0);
+    ].filter(category => category.skills && category.skills.length > 0);
   }
 
   // Generate project data for carousel

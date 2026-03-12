@@ -153,3 +153,32 @@ pre {
   word-wrap: normal;
   overflow-x: auto;
 }
+
+/* Premium Styling Extensions */
+@layer utilities {
+  .glass-card {
+    @apply bg-card/40 backdrop-blur-md border border-border/50 shadow-sm transition-all duration-300;
+  }
+  
+  .glow-sm {
+    @apply shadow-[0_0_15px_-5px_rgba(0,0,0,0.1)];
+  }
+
+  .dark .glow-sm {
+    @apply shadow-[0_0_15px_-5px_rgba(255,255,255,0.1)];
+  }
+
+  .text-glow {
+    @apply [text-shadow:0_0_20px_rgba(255,255,255,0.3)];
+  }
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}

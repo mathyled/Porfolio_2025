@@ -13,7 +13,7 @@ interface Project {
   demo?: string;
   video?: string;
   github?: string;
-  image?: any;
+  image?: string;
   imageAlt?: string;
 }
 
@@ -43,7 +43,7 @@ const baseProjects = [
     image: musicLearnImage,
     imageAlt: 'Vista previa del proyecto MusicLearn with AI',
   },
-  {
+     {
     tech: ['Next.js', 'Tailwind', 'Shadcn UI', 'React Framer Motion'],
     demo: 'https://cep-running-team.vercel.app/',
     video: '#',

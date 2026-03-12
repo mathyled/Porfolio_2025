@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     default: "Mathias Ledesma - Frontend Engineer | Professional Portfolio",
     template: "%s | Mathias Ledesma Portfolio"
   },
-  description: "Professional portfolio of Mathias Anibal Ledesma - Frontend Engineer. 25+ automation projects, IoT systems, and AI-powered solutions. Available for internships.",
+  description: "Professional portfolio of Mathias Anibal Ledesma - Frontend Engineer. 25+ automation projects, and AI-powered solutions. Available for internships.",
   keywords: [
     "Mathias Ledesma",
     "Full-stack Developer",
@@ -62,11 +62,11 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://portfolio.mathyled.tech/",
     title: "Mathias Ledesma - Frontend Engineer | Professional Portfolio",
-    description: "Professional portfolio showcasing AI-powered projects, IoT systems, and full-stack development. SIH 2025 Finalist with 25+ automation projects. Available for internships.",
+    description: "Professional portfolio showcasing AI-powered projects, and full-stack development.",
     siteName: "Mathias Ledesma Portfolio",
     images: [
       {
-        url: "https://portfolio.mathyled.tech/portfolio.png",
+        url: "https://portfolio.mathyled.tech/profile.png",
         width: 1200,
         height: 630,
         alt: "Mathias Ledesma - Professional Portfolio with AI Chatbot",
@@ -77,11 +77,11 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Mathias Ledesma - Frontend Engineer",
-    description: "Professional portfolio showcasing AI projects, IoT systems, and automation solutions. SIH 2025 Finalist available for internships.",
+    description: "Professional portfolio showcasing AI projects, and automation solutions.",
     creator: "@mathyled",
     site: "@mathyled",
     images: [{
-      url: "https://portfolio.mathyled.tech/portfolio.png",
+      url: "https://portfolio.mathyled.tech/profile.png",
       alt: "Mathias Ledesma Professional Portfolio"
     }],
   },
@@ -142,14 +142,14 @@ export default function RootLayout({
               },
               "knowsAbout": [
                 "Python Development",
+                "Java Development",
+                "React Development",
                 "AI Engineering",
-                "Machine Learning",
-                "IoT Systems",
                 "Web Development",
                 "Automation",
                 "Full Stack Development"
               ],
-              "description": "Frontend Engineer with expertise in building AI-powered solutions, IoT systems, and automation tools. SIH 2025 Finalist with 25+ delivered projects."
+              "description": "Frontend Engineer with expertise in building AI-powered solutions,and automation tools."
             })
           }}
         />

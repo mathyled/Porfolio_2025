@@ -2,7 +2,6 @@
   "name": "Mathias portfolio",
   "version": "0.1.0",
   "private": true,
-  "type": "module",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -42,8 +41,9 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "@typescript-eslint/parser": "^8.27.0",
+    "autoprefixer": "^10.4.27",
     "eslint": "^9.22.0",
-    "eslint-config-next": "16.1.6",
+    "eslint-config-next": "15.2.3",
     "eslint-config-prettier": "^10.1.1",
     "eslint-plugin-prettier": "^5.2.3",
     "eslint-plugin-tailwindcss": "^3.18.0",

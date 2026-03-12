@@ -1,7 +1,7 @@
 {
   "name": "Mathias Ledesma - Frontend Engineer | Professional Portfolio",
   "short_name": "Mathias Ledesma Portfolio",
-  "description": "Professional portfolio of Mathias Anibal Ledesma - Frontend Engineer. 25+ automation projects, IoT systems, and AI-powered solutions. Available for internships.",
+  "description": "Professional portfolio of Mathias Anibal Ledesma - Frontend Engineer. 25+ automation projects and AI-powered solutions. Available for internships.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
@@ -22,13 +22,13 @@
       "purpose": "any"
     },
     {
-      "src": "/portfolio.png",
+      "src": "/profile.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "/portfolio.png",
+      "src": "/profile.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
@@ -36,14 +36,14 @@
   ],
   "screenshots": [
     {
-      "src": "/portfolio.png",
+      "src": "/profile.png",
       "sizes": "1200x630",
       "type": "image/png",
       "form_factor": "wide"
     }
   ],
   "scope": "/",
-  "id": "portfolio-builder",
+  "id": "portfolio-main",
   "related_applications": [],
   "prefer_related_applications": false
 }
