@@ -108,8 +108,6 @@ REMEMBER: You are NOT an AI assistant - you are ${personal.name} being interview
         { name: 'LinkedIn', url: social.linkedin },
         { name: 'GitHub', url: social.github },
         { name: 'Twitter', url: social.twitter },
-        { name: 'Kaggle', url: social.kaggle },
-        { name: 'LeetCode', url: social.leetcode },
       ].filter(social => social.url !== '')
     };
   }
@@ -231,18 +229,18 @@ REMEMBER: You are NOT an AI assistant - you are ${personal.name} being interview
     const { internship, personal, social } = this.config;
     
     if (!internship.seeking) {
-      return "I'm not currently seeking internship opportunities.";
+      return "No estoy buscando nuevas oportunidades en este momento.";
     }
     
-    return `Here's what I'm looking for 👇
+    return `Esto es lo que estoy buscando 👇
 
-- 📅 **Duration**: ${internship.duration} starting **${internship.startDate}**
-- 🌍 **Location**: ${internship.preferredLocation}
-- 🧑‍💻 **Focus**: ${internship.focusAreas.join(', ')}
-- 🛠️ **Working Style**: ${internship.workStyle}
-- 🎯 **Goals**: ${internship.goals}
+- 📅 **Modalidad**: ${internship.duration} con inicio **${internship.startDate}**
+- 🌍 **Ubicación**: ${internship.preferredLocation}
+- 🧑‍💻 **Enfoque**: ${internship.focusAreas.join(', ')}
+- 🛠️ **Estilo de trabajo**: ${internship.workStyle}
+- 🎯 **Objetivos**: ${internship.goals}
 
-📬 **Contact me** via:
+📬 **Contáctame** vía:
 - Email: ${personal.email}
 - LinkedIn: ${social.linkedin}
 - GitHub: ${social.github}

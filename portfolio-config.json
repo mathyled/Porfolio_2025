@@ -249,16 +249,17 @@
   },
   "internship": {
     "seeking": true,
-    "duration": "",
-    "startDate": "",
-    "preferredLocation": "Remote",
+    "duration": "Tiempo completo / Freelance",
+    "startDate": "Inmediata",
+    "preferredLocation": "Remoto / Buenos Aires, Argentina",
     "focusAreas": [
-      "Frontend Development",
-      "Full Stack Development"
+      "Desarrollo Frontend",
+      "Desarrollo Full Stack",
+      "Arquitectura de Software"
     ],
-    "availability": "Available for immediate start",
-    "workStyle": "Fast learner, team player",
-    "goals": "Build amazing and responsive web experiences"
+    "availability": "Disponible para incorporación inmediata",
+    "workStyle": "Aprendizaje rápido, proactivo y orientado a resultados",
+    "goals": "Crear experiencias web modernas, escalables y de alto impacto"
   },
   "personality": {
     "traits": [
