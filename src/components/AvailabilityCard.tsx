@@ -45,10 +45,6 @@ interface AvailabilityCardProps {
 const AvailabilityCard = ({ data }: AvailabilityCardProps) => {
   const router = useRouter();
 
-  const handleContactClick = () => {
-    // Navigate to home page with the contact preset question
-    router.push('/?query=¿Cómo puedo contactarte?');
-  };
 
   return (
     <motion.div
@@ -135,7 +131,7 @@ const AvailabilityCard = ({ data }: AvailabilityCardProps) => {
           <div>
             <p className="text-foreground text-sm font-medium">Ubicación</p>
             <p className="text-muted-foreground text-sm">
-              {data?.preferences.location || "Basado en Argentina, abierto a relocalización o remoto 🇦🇷"}
+              {data?.preferences.location || "Argentina, abierto modalidad presencial o remoto 🇦🇷"}
             </p>
           </div>
         </div>
@@ -211,15 +207,6 @@ const AvailabilityCard = ({ data }: AvailabilityCardProps) => {
         </p>
       </div>
 
-      {/* Contact button */}
-      <div className="mt-10 flex justify-center">
-        <button
-          onClick={handleContactClick}
-          className="cursor-pointer rounded-full bg-black px-6 py-3 font-semibold text-white transition-all duration-300 hover:bg-zinc-800 shadow-lg hover:shadow-black/20"
-        >
-          Contáctame
-        </button>
-      </div>
     </motion.div>
   );
 };
