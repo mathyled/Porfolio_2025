@@ -124,7 +124,7 @@
     {
       "title": "MateTech",
       "category": "Freelance / Automation",
-      "description": "Mi web personal para captar clientes freelance. Cuenta con un formulario integrado con Airtable y notificaciones en tiempo real vía Telegram Bot para una respuesta instantánea.",
+      "description": "Mi web personal para captar clientes. Cuenta con un formulario integrado con Airtable y notificaciones en tiempo real vía Telegram Bot para una respuesta instantánea.",
       "techStack": [
         "Next.js",
         "Tailwind CSS",
@@ -150,7 +150,7 @@
     {
       "title": "CEP Running Team",
       "category": "SaaS / Management",
-      "description": "Plataforma SaaS a medida para la gestión operativa de un equipo de corredores (+300 alumnos). Incluye Legajo Médico Digital, Logística de Carreras y Calculadoras de Rendimiento (VAM). Módulo reserva de turnos para entrenamientos. Gestión de pagos y suscripciones.",
+      "description": "Plataforma SaaS a medida para la gestión operativa de un equipo de corredores (+300 alumnos). Incluye Legajo Médico Digital, Logística de Carreras y Calculadoras de Rendimiento (VAM). Módulo reserva de turnos para entrenamientos. Gestión de pagos informada",
       "techStack": [
         "Next.js 16",
         "Tailwind CSS",
