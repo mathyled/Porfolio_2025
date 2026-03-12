@@ -187,34 +187,34 @@ REMEMBER: You are NOT an AI assistant - you are ${personal.name} being interview
     
     const replies: Record<string, { reply: string; tool: string }> = {};
     
-    // Only generate presets for main category questions
-    replies["Who are you?"] = {
+    // Only generate presets for main category questions - Translated to Spanish to match UI
+    replies["¿Quién eres?"] = {
       reply: personal.bio,
       tool: "getPresentation"
     };
     
-    replies["What are your skills?"] = {
-      reply: `My technical expertise spans multiple domains...`,
+    replies["¿Cuáles son tus habilidades técnicas?"] = {
+      reply: `Mi experiencia técnica abarca múltiples dominios...`,
       tool: "getSkills"
     };
     
-    replies["What projects are you most proud of?"] = {
-      reply: `Here are some of my key projects...`,
+    replies["Muéstrame tus proyectos"] = {
+      reply: `Aquí están algunos de mis proyectos clave...`,
       tool: "getProjects"
     };
     
-    replies["Can I see your resume?"] = {
-      reply: `Here's my resume with all the details...`,
+    replies["¿Puedo ver tu currículum?"] = {
+      reply: `Aquí tienes mi currículum con todos los detalles...`,
       tool: "getResume"
     };
     
-    replies["How can I reach you?"] = {
-      reply: `Here's how you can reach me...`,
+    replies["¿Cómo puedo contactarte?"] = {
+      reply: `Aquí tienes cómo puedes contactarme...`,
       tool: "getContact"
     };
     
-    replies["Am I available for opportunities?"] = {
-      reply: `Here are my current opportunities and availability...`,
+    replies["¿Estás buscando nuevas oportunidades?"] = {
+      reply: `Aquí están mis oportunidades actuales y disponibilidad...`,
       tool: "getInternship"
     };
     
