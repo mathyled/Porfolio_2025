@@ -1,11 +1,26 @@
 import Image from 'next/image';
 import { Image as Img } from 'lucide-react';
-import { ChevronRight, Link } from 'lucide-react';
+import { ChevronRight, Link, Video } from 'lucide-react';
 import { projectData, getConfig } from '@/lib/config-loader';
 
 // Get project content from configuration
 const config = getConfig();
 const PROJECT_CONTENT = config.projects;
+
+const isVideoLink = (name: string, url: string): boolean => {
+  const normalizedName = name.toLowerCase();
+  const normalizedUrl = url.toLowerCase();
+
+  return (
+    normalizedName.includes('video') ||
+    normalizedName.includes('demo') ||
+    normalizedUrl.includes('youtube.com') ||
+    normalizedUrl.includes('youtu.be') ||
+    normalizedUrl.includes('vimeo.com') ||
+    normalizedUrl.includes('loom.com') ||
+    normalizedUrl.includes('linkedin.com')
+  );
+};
 
 // ProjectContent component - now uses config data
 const ProjectContent = ({ project }: { project: { title: string } }) => {
@@ -90,22 +105,64 @@ const ProjectContent = ({ project }: { project: { title: string } }) => {
       {/* Links */}
       {projectData.links && projectData.links.length > 0 && (
         <div className="space-y-4">
-          <h4 className="text-sm font-bold uppercase tracking-widest text-neutral-500">Project Links</h4>
-          <div className="flex flex-wrap gap-4">
-            {projectData.links.map((link, index) => (
-              <a
-                key={index}
-                href={link.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group flex items-center gap-3 px-6 py-3 bg-primary text-primary-foreground rounded-2xl hover:opacity-90 transition-all shadow-lg shadow-primary/20"
-              >
-                <Link className="h-4 w-4" />
-                <span className="font-semibold">{link.name}</span>
-                <ChevronRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
-              </a>
-            ))}
-          </div>
+          {(() => {
+            const videoLinks = projectData.links.filter(link =>
+              isVideoLink(link.name, link.url)
+            );
+            const standardLinks = projectData.links.filter(
+              link => !isVideoLink(link.name, link.url)
+            );
+
+            return (
+              <div className="space-y-6">
+                {standardLinks.length > 0 && (
+                  <div className="space-y-4">
+                    <h4 className="text-sm font-bold uppercase tracking-widest text-neutral-500">
+                      Project Links
+                    </h4>
+                    <div className="flex flex-wrap gap-4">
+                      {standardLinks.map((link, index) => (
+                        <a
+                          key={`${link.url}-${index}`}
+                          href={link.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="group flex items-center gap-3 px-6 py-3 bg-primary text-primary-foreground rounded-2xl hover:opacity-90 transition-all shadow-lg shadow-primary/20"
+                        >
+                          <Link className="h-4 w-4" />
+                          <span className="font-semibold">{link.name}</span>
+                          <ChevronRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                        </a>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {videoLinks.length > 0 && (
+                  <div className="space-y-4">
+                    <h4 className="text-sm font-bold uppercase tracking-widest text-neutral-500">
+                      Videos
+                    </h4>
+                    <div className="flex flex-wrap gap-4">
+                      {videoLinks.map((link, index) => (
+                        <a
+                          key={`${link.url}-video-${index}`}
+                          href={link.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="group flex items-center gap-3 px-6 py-3 bg-neutral-900 text-white dark:bg-white dark:text-neutral-900 rounded-2xl hover:opacity-90 transition-all shadow-lg"
+                        >
+                          <Video className="h-4 w-4" />
+                          <span className="font-semibold">{link.name}</span>
+                          <ChevronRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                        </a>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
+            );
+          })()}
         </div>
       )}
 

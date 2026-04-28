@@ -170,6 +170,10 @@
         {
           "name": "GitHub",
           "url": "https://github.com/mathyled/running-team"
+        },
+        {
+          "name": "Video",
+          "url": "https://www.youtube.com/watch?v=mIczt49EXvQ"
         }
       ],
       "images": [
@@ -213,31 +217,37 @@
       ]
     },
     {
-      "title": "E-Commerce Platform",
+      "title": "Distribuya",
       "category": "Web Development",
-      "description": "Plataforma de comercio electrónico completa con carrito de compras, autenticación y panel de administración.",
+      "description": "Plataforma de distribución de productos y servicios para empresas y emprendedores. Incluye carrito de compras inteligente, notificaciones en tiempo real, autenticación y panel de administración.",
       "techStack": [
-        "React",
-        "Bootstrap",
-        "CSS Modules"
+        "Next.js",
+        "Tailwind",
+        "Shadcn UI",
+        "React Framer Motion",
+        "MongoDB"
       ],
-      "date": "2023",
+      "date": "2026",
       "status": "Completed",
       "featured": true,
       "links": [
         {
           "name": "Live Site",
-          "url": "https://my-ecommerce-ten-iota.vercel.app/"
+          "url": "https://www.distribuya.com.ar/"
         },
         {
           "name": "GitHub",
-          "url": "https://github.com/mathyled/my_ecommerce"
+          "url": "/#"
+        },
+        {
+          "name": "Video",
+          "url": "https://www.instagram.com/p/DXNYIfkSeVt/"
         }
       ],
       "images": [
         {
-          "src": "/ecommerce-project.png",
-          "alt": "E-Commerce"
+          "src": "/distribuyaImage.png",
+          "alt": "Distribuya"
         }
       ]
     },

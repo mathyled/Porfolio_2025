@@ -4,7 +4,7 @@ import { useLanguage } from '../contexts/LanguageContext';
 import { t, projectTranslations } from '../i18n';
 import mobileAppImage from '../images/mobile-app-project.png';
 import musicLearnImage from '../images/music-learn-project.png';
-import ecommerceProjectImage from '../images/ecommerce-project.png';
+import DistribuyaImage from '../images/DistribuyaImage.png';
 import runningTeamImage from '../images/cep.png';
 import matetechImage from '../images/matetech-sitio.png';
 
@@ -27,12 +27,12 @@ const baseProjects = [
     imageAlt: 'Vista previa de MateTech',
   },
   {
-    tech: ['React', 'Bootstrap', 'CSS Modules'],
-    demo: 'https://my-ecommerce-ten-iota.vercel.app/',
+    tech: ['Next.js', 'Tailwind', 'Shadcn UI', 'React Framer Motion'],
+    demo: 'https://www.distribuya.com.ar/',
     video: '#',
-    github: 'https://github.com/mathyled/my_ecommerce',
-    image: ecommerceProjectImage,
-    imageAlt: 'Vista previa del proyecto E-Commerce Platform',
+    github: '/#',
+    image: DistribuyaImage,
+    imageAlt: 'Vista previa del proyecto Distribuya',
   },
   {
     tech: ['Flutter', 'Firebase', 'TypeScript'],
@@ -53,7 +53,7 @@ const baseProjects = [
      {
     tech: ['Next.js', 'Tailwind', 'Shadcn UI', 'React Framer Motion'],
     demo: 'https://cep-running-team.vercel.app/',
-    video: '#',
+    video: 'https://www.youtube.com/watch?v=mIczt49EXvQ',
     github: 'https://github.com/mathyled/running-team',
     image: runningTeamImage,
     imageAlt: 'Vista previa del proyecto CEP Running Team',
