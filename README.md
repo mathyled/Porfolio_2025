@@ -1,229 +1,98 @@
-# 🚀 AI-Powered Portfolio – Effortless, Customizable, Professional
+# Porfolio 2025 - Mathias Ledesma
 
-**Create a powerful, modern developer portfolio in minutes — fully customizable through a single JSON file and enhanced by AI.**  
-No coding knowledge required. Just configure, deploy, and showcase your best self.
+Portfolio personal desarrollado con Next.js 16, TypeScript y Tailwind CSS 4.
 
-![Portfolio Preview](https://raw.githubusercontent.com/anujjainbatu/ai-portfolio-system-landing-page/refs/heads/main/assets/portfolio.png)
+La app muestra experiencia profesional, skills, proyectos destacados y CV.
 
-<p align="center">
-  <a href="https://portfolio.anujjainbatu.tech/"><img src="https://img.shields.io/badge/Demo-Live%20Site-brightgreen" alt="Live Demo"></a>
-  <a href="docs/LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="MIT License"></a>
-  <a href="https://www.typescriptlang.org/"><img src="https://img.shields.io/badge/TypeScript-100%25-blue" alt="TypeScript"></a>
-  <a href="docs/CONTRIBUTING.md"><img src="https://img.shields.io/badge/Contributions-Welcome-brightgreen.svg" alt="Contributions Welcome"></a>
-  <a href="https://github.com/anujjainbatu/portfolio/issues"><img src="https://img.shields.io/github/issues/anujjainbatu/portfolio" alt="GitHub Issues"></a>
-  <a href="https://github.com/anujjainbatu/portfolio/stargazers"><img src="https://img.shields.io/github/stars/anujjainbatu/portfolio" alt="GitHub Stars"></a>
-</p>
+## Caracteristicas
 
-> 🌟 **NEW**: Looking for the marketing landing page? Check out our [dedicated landing page repository](https://github.com/anujjainbatu/portfolio-builder-landing) with SEO-optimized content designed to showcase this portfolio builder to the world!
+- Landing interactiva con consultas rapidas.
+- Secciones de presentacion, skills, proyectos y contacto.
+- Configuracion centralizada del contenido en `portfolio-config.json`.
+- UI moderna con componentes estilo shadcn/ui y animaciones con Framer Motion.
 
----
 
-## ✨ Why Choose This Portfolio?
+## Stack tecnico
 
-| Traditional Portfolios              | **This Portfolio**                                   |
-|-------------------------------------|-----------------------------------------------------|
-| Tedious manual edits                | **Edit 1 JSON file — instant updates**              |
-| Risk of breaking code               | **Zero coding required**                            |
-| Complex, hard-to-customize codebase | **Intuitive configuration, AI-powered assistance**  |
-| Outdated design                     | **Modern, responsive layout**                       |
+- `Next.js 16` (App Router)
+- `React 19`
+- `TypeScript`
+- `Tailwind CSS 4`
+- `Framer Motion`
+- `Radix UI` + utilidades UI custom
 
----
+## Requisitos
 
-## 🚦 Quick Start (5 Minutes)
+- `Node.js` 20 o superior recomendado.
+- `pnpm` (recomendado) o `npm`.
 
-<details>
-<summary><strong>Step-by-step Setup</strong></summary>
+## Instalacion y ejecucion local
 
-1. **Fork & Clone**
-    ```bash
-    git clone https://github.com/your-username/portfolio.git
-    cd portfolio
-    ```
+1. Clonar el repositorio.
+2. Instalar dependencias:
 
-2. **Install Dependencies**
-    ```bash
-    npm install
-    # or
-    pnpm install
-    # or
-    yarn install
-    ```
-
-3. **Get a Google Gemini API Key**
-    - Visit [Google AI Studio](https://aistudio.google.com/)
-    - Sign in, create an API key, and copy it.
-
-4. **Configure Environment**
-    - Copy `.env.example` to `.env.local`
-    - Add your API key:
-      ```
-      GOOGLE_GENERATIVE_AI_API_KEY=your_google_ai_api_key_here
-      ```
-
-5. **Edit Your Info**
-    - Fill `portfolio-config.json` with your information (see below).
-
-6. **Add Images**
-    - Replace images in `/public/` as needed (profile, projects, etc).
-
-7. **Run Locally**
-    ```bash
-    npm run dev
-    ```
-    - Visit [http://localhost:3000](http://localhost:3000)
-
-8. **Deploy**
-    ```bash
-    npm run build
-    ```
-    - Deploy to Vercel, Netlify, or any platform.
-
-</details>
-
----
-
-## 🤖 AI-Driven Configuration
-
-**Let AI build your portfolio configuration for you!**
-
-- Upload your resume (PDF/DOC) and the sample `portfolio-config.json` to ChatGPT or Claude.
-- Use this prompt:
-    ```
-    Please generate a portfolio-config.json using my resume and this template. Include my experience, skills, projects, and suggested images.
-    ```
-- Alternatively, manually edit `portfolio-config.json` to customize your info, skills, and projects.
-
----
-
-## 🗂️ Project Structure
-
-<details>
-<summary><strong>View File Structure</strong></summary>
-
-```
-portfolio/
-├── portfolio-config.json   # Main configuration
-├── public/                # Images & assets
-├── src/                   # Source code
-│   ├── app/               # Next.js app structure
-│   ├── components/        # UI Components
-│   ├── lib/               # Config loaders & utilities
-│   ├── types/             # TypeScript types
-│   └── hooks/             # React hooks
-├── docs/                  # Documentation
-├── assets/                # Documentation assets
-├── package.json           # Project metadata
-└── ...
-```
-</details>
-
----
-
-## 🖼️ Image & Asset Guidelines
-
-- **Profile Picture**: `public/profile.png` (400x400px+)
-- **Project Screenshots**: `public/project-1.jpg` (1200x800px recommended)
-- **Favicon**: `public/favicon.ico` (32x32px)
-- **Use compressed images** for faster load times (e.g., [TinyPNG](https://tinypng.com/))
-- **External URLs** supported
-
----
-
-## 🧠 AI Chatbot Configuration
-
-- Fully customizable AI chat, driven by your JSON config.
-- Features:
-  - Preset questions & responses
-  - Dynamic AI replies (Google Gemini API)
-  - Mobile optimized
-  - Quota management & graceful fallback
-
-Example config:
-```json
-{
-  "chatbot": {
-    "name": "Mathias",
-    "personality": "Professional yet friendly",
-    "tone": "Conversational and helpful"
-  }
-}
+```bash
+pnpm install
 ```
 
----
+3. Crear archivo de entorno:
 
-## ⚙️ Environment & Validation
+```bash
+cp .env.example .env.local
+```
 
-- **Environment Variables**:  
-  - `GOOGLE_GENERATIVE_AI_API_KEY=your_key`
-  - `NEXT_PUBLIC_SITE_URL=https://your-site.com` (optional)
-- **Validation**:
-    ```bash
-    node -e "console.log('Valid JSON:', !!JSON.parse(require('fs').readFileSync('portfolio-config.json')))"
-    npm run type-check
-    npm run build
-    ```
+4. Completar variables necesarias en `.env.local`.
+5. Levantar entorno de desarrollo:
 
----
+```bash
+pnpm dev
+```
 
-## 🌎 Deployment
+6. Abrir [http://localhost:3000](http://localhost:3000).
 
-**Vercel (Recommended):**  
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fanujjainbatu%2Fportfolio)
+## Variables de entorno
 
-**Manual:**
-- Push to GitHub
-- Import to Vercel/Netlify/Railway
-- Set environment variables
-- Deploy!
+Definidas en `.env.example`:
 
----
+- `NEXT_PUBLIC_SITE_URL`: opcional, util para dominio publico/canonical URL.
 
-## 🎨 Customization & Advanced Usage
+## Scripts disponibles
 
-- **Themes:** Edit `tailwind.config.ts`
-- **New Sections:** Update JSON, add components/tools/types as needed
-- **Analytics:** Integrate via `layout.tsx`
-- **Image Hosting:** Local, GitHub, CDN
+- `pnpm dev`: ejecuta el servidor de desarrollo.
+- `pnpm build`: genera build de produccion.
+- `pnpm start`: inicia la app en modo produccion.
+- `pnpm lint`: corre linting con configuracion de Next.js.
 
----
+## Estructura principal
 
-## 🆘 Troubleshooting & Support
+- `src/app`: rutas y layout principal.
+- `src/components`: componentes de UI y secciones del portfolio.
+- `src/lib`: carga/parsing de configuracion y utilidades.
+- `src/types`: tipos TypeScript del dominio.
+- `public`: assets estaticos (imagenes, CV, icons).
+- `portfolio-config.json`: fuente de verdad del contenido del portfolio.
 
-- **AI Chat not working?** Check your API key and quota.
-- **Images missing?** Ensure correct paths and filenames.
-- **Build failing?** Validate JSON and run type checks.
-- **Need help?**
-  - [Open an Issue](https://github.com/anujjainbatu/portfolio/issues)
-  - [Discussions](https://github.com/anujjainbatu/portfolio/discussions)
-  - Email: anujjainbatu@gmail.com
+## Personalizacion de contenido
 
----
+Todo el contenido principal del sitio se gestiona en `portfolio-config.json`, incluyendo:
 
-## 📚 Documentation
+- datos personales y bio,
+- experiencia y educacion,
+- skills por categoria,
+- proyectos y links,
+- redes sociales,
 
-Full guides in [`docs/`](docs/):
+Despues de editar ese archivo, los cambios se reflejan automaticamente en la app.
 
-- [Contributing](docs/CONTRIBUTING.md)
-- [License](docs/LICENSE)
-- [Setup](#-quick-start-5-minutes)
-- [Troubleshooting](#-troubleshooting--support)
+## Build de produccion
 
----
+```bash
+pnpm build
+pnpm start
+```
 
-## 🤝 Contributing
+## Deploy
 
-We welcome your contributions!  
-Check [open issues](https://github.com/anujjainbatu/portfolio/issues) or read [CONTRIBUTING.md](docs/CONTRIBUTING.md) to get started.
+Se puede desplegar en Vercel u otra plataforma compatible con Next.js.
 
----
-
-## 📄 License
-
-MIT License — see [LICENSE](docs/LICENSE) for details.
-
----
-
-<p align="center">
-  <b>Made with ❤️ by developers, for developers</b><br>
-  <a href="https://github.com/anujjainbatu/portfolio">⭐ Star on GitHub</a> | <a href="https://github.com/anujjainbatu/portfolio/issues">🐛 Report Bug</a> | <a href="https://github.com/anujjainbatu/portfolio/discussions">💬 Request Feature</a>
-</p>
+Para Vercel, importar el repositorio y definir las variables de entorno en el panel del proyecto.
